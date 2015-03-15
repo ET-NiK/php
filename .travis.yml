@@ -28,6 +28,7 @@ before_script:
   - pecl install -f ssh2-beta < .noninteractive
   - sudo apt-get install -y -qq telnet
   - echo `whoami`":1234" | sudo chpasswd
+  - sudo netstat -lntup
   - if [[ "$DB" == "pgsql" ]]; then psql -c "DROP DATABASE IF EXISTS hello_world_test;" -U postgres; fi
   - if [[ "$DB" == "pgsql" ]]; then psql -c "create database hello_world_test;" -U postgres; fi
   - if [[ "$DB" == "mysql" ]]; then mysql -e "create database IF NOT EXISTS hello_world_test;" -uroot; fi
