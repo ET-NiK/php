@@ -1,5 +1,7 @@
 <?php
 
+// test
+
 function loader($class)
 {
     $file = $class . '.php';
